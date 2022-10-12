@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <title>Hit the Numbers!</title>
+</head>
+
+<body onload="onInit()">
+
+    <div class="header">
+        <h1>Hit the Numbers in Order</h1>
+        <div class="timer">
+            Game Time: <span>0</span>
+        </div>
+        <span class = "winner" hidden>YOU WIN!!</span>
+    </div>
+    
+    <div class="game">
+
+        <table class="game-board" border="1" cellpadding="10">
+            <tbody class="board"></tbody>
+        </table>
+        
+        <div class = "level">
+            <button onclick = "onChooseLevel(9)">Lite (9)</button>
+            <button onclick = "onChooseLevel(16)">Ridiculous (16)</button>
+            <button onclick = "onChooseLevel(25)">Ludicrous (25)</button>
+            <button onclick = "onChooseLevel(36)">Plaid (36)</button>
+        </div>
+        
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/util.js"></script>
+</body>
+
+</html>
