@@ -6,9 +6,6 @@ var gNextNum
 var gStartTime
 var gGameInterval;
 
-console.log('innerHTML',document.querySelector('.level').innerHTML)
-console.log('innerText',document.querySelector('.level').innerText)
-
 
 function onInit() {
     gameSetup()
@@ -29,7 +26,6 @@ function createBoard() {
     for (var i = 0; i < BOARD_SIZE; i++) {
         nums.push(i + 1)
     }
-    // console.log('nums',nums);
     for (var i = 0; i < BOARD_SIZE; i++) {
         var numIdx = getRandomInt(0, nums.length - 1)
         var rdmNum = +nums.splice(numIdx, 1)[0]
@@ -39,7 +35,6 @@ function createBoard() {
 }
 
 function renderBoard(board) {
-    // console.log('board', board);
 
     var strHTML = ''
     var i = 0
@@ -51,7 +46,6 @@ function renderBoard(board) {
         if (isNewBoardRow(i)) strHTML += `</tr>\n`
     }
 
-    // console.log('strHTML',strHTML);
     var elBoard = document.querySelector('.board')
     elBoard.innerHTML = strHTML
 }
@@ -83,7 +77,7 @@ function startTimer() {
 function updateTimer() {
     var timeDiff = Date.now() - gStartTime
     var timeSecs = (timeDiff / 1000).toFixed(3)
-    elSpan = document.querySelector('.timer span')
+    var elSpan = document.querySelector('.timer span')
     elSpan.innerText = timeSecs
 }
 
@@ -101,7 +95,7 @@ function onChooseLevel(size) {
         BOARD_SIZE = size
         var elWin = document.querySelector('.winner')
         elWin.hidden = true
-        elSpan = document.querySelector('.timer span')
+        var elSpan = document.querySelector('.timer span')
         elSpan.innerText = 0
         gameSetup()
     }
